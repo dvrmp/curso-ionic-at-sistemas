@@ -6,8 +6,8 @@
 - git commit -m " <mensaje> " ( Realiza un commit con un mensaje descriptivo )
 - git commit -am ( Realiza un commit con todos los archivos de proyecto con un mensaje )
 - git commit --amend -m <"mensaje"> ( Actualiza el mensaje descriptivo del último commit )
--git stash ( Almecena todos los cambios en una pila temporal )
--git stash pop ( Recupera todos los cambios de la pila de stash )
+- git stash ( Almecena todos los cambios en una pila temporal )
+- git stash pop ( Recupera todos los cambios de la pila de stash )
 - git diff <Nombre archivo> ( Muestra las diferencias entre el archivo )
 - git checkout -- .  ( Revierte todo el proyecto a como estaba en el último commit ) 
 - git checkout -- ( Nombre archivo ) ( Revierte los cambios realizados en el archivo indicado )
@@ -69,12 +69,12 @@ Ejemplo : git checkout master
 
 ## Tags
 
--git tag ( Muestra todos los tag )
--git tag <Nombre tag> ( Crea un nuevo tag con el nombre indicado )
--git tag -d <Nombre tag> ( Elimina un tag con el nombre indicado )
--git tag -a <Anotación> -m <"Mensaje"> ( Crea un nuevo tag con una anotación y un mensaje )
--git tag -a <Anotación> <hash commit> -m <"Mensaje"> ( Crea un tag para un commit específico )
--git show <Anotación> ( Muestra información sobre un tag especifico )
+- git tag ( Muestra todos los tag )
+- git tag <Nombre tag> ( Crea un nuevo tag con el nombre indicado )
+- git tag -d <Nombre tag> ( Elimina un tag con el nombre indicado )
+- git tag -a <Anotación> -m <"Mensaje"> ( Crea un nuevo tag con una anotación y un mensaje )
+- git tag -a <Anotación> <hash commit> -m <"Mensaje"> ( Crea un tag para un commit específico )
+- git show <Anotación> ( Muestra información sobre un tag especifico )
 
 ## Tratamiento de archivos
 
@@ -85,12 +85,12 @@ __________________________________________________________________________
 
 ## GIT REMOTO
 
--git remote add origin <URL Repositorio> ( Connecta con un repositorio remoto )
--git push ( Actualiza el repositorio remoto )
--git push origin <Nombre Rama> ( Sube la rama indicada al repositorio remoto )
--git clone <URL Repositorio> ( Descarga un repositorio alojado en la nube )
--git pull origin <Rama> ( Obtiene la ultima versión del repositorio )
--git remote prune ( Actualiza las ramas en remoto )
+- git remote add origin <URL Repositorio> ( Connecta con un repositorio remoto )
+- git push ( Actualiza el repositorio remoto )
+- git push origin <Nombre Rama> ( Sube la rama indicada al repositorio remoto )
+- git clone <URL Repositorio> ( Descarga un repositorio alojado en la nube )
+- git pull origin <Rama> ( Obtiene la ultima versión del repositorio )
+- git remote prune ( Actualiza las ramas en remoto )
 
 ___________________________________________________________________________
 
