@@ -5,7 +5,8 @@ const users = require('./users.json');
  * Obtener el usuario cuyo teléfono es "024-648-3804"
  */
 console.log('=== 1 ===');
-const user = users.filter((user)=>user.phone==='024-648-3804')[0]
+const user = users.filter((user)=>user.phone==='024-648-3804')[0];
+console.log(user);
 
 /**
  * Ejercicio 2
@@ -17,12 +18,14 @@ console.log('=== 2 ===');
 const checkUserAvailable = (email) => {
      if(!users.every((user)=>user.email===email)) return true
 }
+console.log(checkUserAvailable('Shanna@melissa.tv'));
  /**
   *  Ejercicio 3
   *  Obtener el número de usuarios que tienen website
   */
 console.log('=== 3 ===');
 const numberUsersWithWebsite = users.filter((user)=>user.website!==undefined).length
+console.log(numberUsersWithWebsite);
 
 /**
  * Ejercicio 4
@@ -35,13 +38,14 @@ const indexUser = users.findIndex((user)=>{
     if(user.address!==undefined && parseInt(user.address.number)<300)
     return user
 })
-
+console.log(indexUser);
 /**
  * Ejercicio 5
  * Obtener un array que sólo contenga las cadenas de los emails de los usuarios
  */
 console.log('=== 5 ===');
 const usersEmails = users.map((user)=>user.email)
+console.log(usersEmails);
 /**
  * Ejercicio 6
  * Obtener un array que contengan objetos {id: "id", username: "username"},
@@ -54,6 +58,7 @@ const objectUsers = users.map((user)=>({
     id:user.id,
     username:user.username
 }))
+console.log(objectUsers);
 
 /**
  *  Ejercicio 7
@@ -66,6 +71,7 @@ const usersChangedAddressFormat = users.map((user)=>{
     user.address.number=parseInt(user.address.number)
     return user
 })
+console.log(usersChangedAddressFormat);
 
 
 /**
@@ -82,15 +88,18 @@ const usersFilteresLtLg = users.filter((user)=>{
         }
     }
 })
+console.log(usersFilteresLtLg);
 /**
  * Ejercicio 9
  * Obtener un array con los teléfonos de los usuarios cuyo website
  * pertenezca a un dominio biz
  */
+console.log('=== 9 ===');
 
 const phonesWithBizEmail = users.map((user)=>{
     if(user.email.split('.').pop()==='biz') return user.phone
 }).filter(((user)=>user!==undefined))
+console.log(phonesWithBizEmail);
 
 /**
  * Ejercicio 10
