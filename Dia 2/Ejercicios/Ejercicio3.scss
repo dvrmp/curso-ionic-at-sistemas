@@ -1,0 +1,48 @@
+@import './minxins.scss';
+$colors: (
+    logo:#888,
+    liCurrent:silver
+);
+
+.menu {
+    position: absolute;
+    @include caja(0,50px);
+
+    .logged-user{
+    padding: 20px;
+        
+        .avatar{
+        display: block;
+        width: 100px;
+            
+            i{
+            color: map-get($colors ,logo);
+            line-height: 100px;
+            }
+        }
+        .controls {
+        position: absolute;
+        @include caja(auto,20px)
+        }
+    }
+    ul{
+    list-style: none;
+    margin: 0;
+    height: 100%;
+        li {
+        position: relative;
+        line-height: 50px;
+            .current{
+            background: map-get($colors, liCurrent );
+            }
+            i{
+            line-height: 50px;
+            font-size: 14pt;
+            }
+            &:first-child{
+                border-top: 1px solid silver; 
+            }
+        }
+    }
+  }
+  

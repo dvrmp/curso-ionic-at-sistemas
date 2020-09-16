@@ -1,0 +1,7 @@
+@mixin caja($top,$height) {
+    top: $top;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    height: $height;
+}
