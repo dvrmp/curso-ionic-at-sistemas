@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Sandbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Raiting content -->
+  <ion-row>
+    <ion-col size="12">
+      <h1>Raiting</h1>
+    </ion-col>
+    <ion-col size="12">
+      <ion-row>
+        <ion-col size="4">
+          <ion-button expand='block' color="success" (click)='addLike()'>
+            <ion-icon class="icon-thumbs" name="thumbs-up"></ion-icon>
+            {{ numLikes / 10 }}
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button expand='block' color="danger" (click)='addDislike()'>
+            <ion-icon class="icon-thumbs" name="thumbs-down"></ion-icon>
+            {{ numDislikes / 10 }}
+          </ion-button>
+        </ion-col>
+        <ion-col size="12">
+          <strong>{{ ((numLikes*10) / ((numLikes+numDislikes)*10))*10  | number:'1.0-2'}} / 10</strong>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <!--Expandable content-->
+  <ion-row>
+    <ion-col size="12">
+      <ion-card>
+        <ion-card-header>
+          <ion-row>
+            <ion-col size="2">
+              <ion-button *ngIf="!contentCardxpanded" color="primary" (click)='expandPanelCard()'>
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+              </ion-button>
+              <ion-button *ngIf="contentCardxpanded" color="primary" (click)='expandPanelCard()'>
+                <ion-icon slot="icon-only" name="remove"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col size="10">
+              <ion-title class="title-card">Title</ion-title>
+            </ion-col>
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content *ngIf='contentCardxpanded'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet id magnam molestiae dolore natus quasi totam aut, quisquam quo accusantium recusandae ex suscipit fugit. Harum blanditiis et vero ratione explicabo soluta alias dolorem impedit autem excepturi quidem id quo neque at dolor deserunt, exercitationem recusandae itaque! Recusandae esse quas corporis.
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <!-- User form -->
+
+  <h1>User form</h1>
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Birthdate</ion-label>
+    <ion-datetime display-format="DD.MM.YYYY HH:mm"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sex</ion-label>
+    <ion-select value="male" multiple="false" placeholder="Select sex">
+      <ion-select-option value="male">Male</ion-select-option>
+      <ion-select-option value="female">Female</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Phone</ion-label>
+    <ion-input type='phone'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input type='email'></ion-input>
+  </ion-item>
+
+</ion-content>
