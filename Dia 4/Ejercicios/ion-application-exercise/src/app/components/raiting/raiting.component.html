@@ -1,0 +1,23 @@
+<ion-row>
+  <ion-col size="12">
+  </ion-col>
+  <ion-col size="12">
+    <ion-row>
+      <ion-col size="4">
+        <ion-button expand='block' color="success">
+          <ion-icon class="icon-thumbs" name="thumbs-up"></ion-icon>
+          {{ numPositives }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button expand='block' color="danger">
+          <ion-icon class="icon-thumbs" name="thumbs-down"></ion-icon>
+          {{ numNegatives }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="12">
+        <strong>{{ ((numPositives*10) / ((numPositives+numNegatives)*10))*10  | number:'1.0-2'}} / 10</strong>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+</ion-row>
