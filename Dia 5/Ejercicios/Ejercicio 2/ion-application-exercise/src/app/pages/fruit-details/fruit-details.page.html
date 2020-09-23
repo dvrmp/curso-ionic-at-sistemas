@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/fruit-list'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ fruit.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+      <ion-col size="12">
+        <img src="assets/images/fruits/{{ fruit.image}}">
+      </ion-col>
+      <ion-col size="12">
+        <app-loading-feedback [state]='state' (ouputEventStateError)='getEventErrorForm($event)'>
+          <form [formGroup]='formDetailFruit' (submit)='updateRemoteFruit()'>
+            <ion-item>
+              <ion-label>Description:</ion-label>
+              <ion-textarea formControlName='description' required rows='10'></ion-textarea>
+            </ion-item>
+            <ion-button type='submit' expand='block' color="primary" [disabled]='this.formDetailFruit.invalid || this.state==="loading"'>Update description</ion-button>
+          </form>
+        </app-loading-feedback>
+      </ion-col>
+    </ion-row>
+
+</ion-content>

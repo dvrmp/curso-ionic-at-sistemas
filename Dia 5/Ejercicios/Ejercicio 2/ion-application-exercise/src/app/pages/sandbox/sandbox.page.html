@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sandbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--Expandable components-->
+  <ion-row>
+    <ion-col size="12">
+      <h1>Expandable contents</h1>
+    </ion-col>
+  </ion-row>
+
+  <app-expandable-content title="Title 1" [indexPanelExpandable]='1' (sendIndexPanelExpanded)='getIndexPanelExpanded($event)'>
+    Content 1
+  </app-expandable-content>
+
+  <app-expandable-content title="Title 2" [indexPanelExpandable]='2' (sendIndexPanelExpanded)='getIndexPanelExpanded($event)'>
+    Content 2
+  </app-expandable-content>
+
+  <app-expandable-content title="Title 3" [indexPanelExpandable]='3' (sendIndexPanelExpanded)='getIndexPanelExpanded($event)'>
+    Content 3
+  </app-expandable-content>
+
+  <app-expandable-content title="Title 4" [indexPanelExpandable]='4' (sendIndexPanelExpanded)='getIndexPanelExpanded($event)'>
+    Content 4
+  </app-expandable-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Number of expanded {{ panelsExpanded.length}}</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+  
+  <!--Raitings-->
+  <h1>Raitings</h1>
+
+  <app-raiting (sendVotes)='getVoteByComponent($event)' [numPositives]=''  [numNegatives]=''></app-raiting>
+  <app-raiting (sendVotes)='getVoteByComponent($event)' [numPositives]='1' [numNegatives]=''></app-raiting>
+  <app-raiting (sendVotes)='getVoteByComponent($event)' [numPositives]=''  [numNegatives]='2'></app-raiting>
+  <app-raiting (sendVotes)='getVoteByComponent($event)' [numPositives]='3' [numNegatives]='1'></app-raiting>
+
+  <ion-row>
+    <ion-col size="12">
+      Up votes sum : {{ totalVotesPositives }}
+    </ion-col>
+    <ion-col size="12">
+      Down votes sum : {{ totalVotesNegatives }}
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
