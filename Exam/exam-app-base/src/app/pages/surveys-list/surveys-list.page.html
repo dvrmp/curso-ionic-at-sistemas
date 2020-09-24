@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="arrow-undo"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ 'SURVEYS_LIST.TITLE' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngIf='errorLoadSurveys' color="danger">
+    <ion-label>Ha ocurrido un error cargando votos</ion-label>
+  </ion-item>
+<ion-progress-bar type='indeterminate' *ngIf='loading'></ion-progress-bar>  
+<ion-list>
+  <ion-item *ngFor='let survey of surveysService.surveys'  [routerLink]="'/survey-detail/' + survey.id">
+    <ion-checkbox [checked]='survey.answered' slot="start"></ion-checkbox>
+    <ion-label>{{ survey.title }}</ion-label>
+  </ion-item>
+</ion-list>
+
+
+
+</ion-content>

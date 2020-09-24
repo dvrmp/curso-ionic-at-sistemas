@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ 'LOGIN.TITLE' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]='FormLogin' (submit)='performAuth()'>
+    <ion-item>
+      <ion-label>Email <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName='email' required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input type='password' formControlName='password' required></ion-input>
+    </ion-item>
+    <ion-progress-bar type='indeterminate' *ngIf='loading'></ion-progress-bar>
+    <ion-button type='submit'>{{ 'LOGIN.BUTTONS.ACCESS' }}</ion-button>
+
+  </form>
+</ion-content>
